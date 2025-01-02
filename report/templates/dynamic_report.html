@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат из базы данных</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='table.css')}}">
+</head>
+<body>
+<div class="dynamic_table">
+    <h2>{{prod_title}}</h2>
+    <table>
+        <tr class="title">
+            <th>Номер услуги</th>
+            <th>Название услуги</th>
+            <th>Подключения</th>
+            <th>Отключения</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{product[0]}}</td>
+            <td>{{product[1]}}</td>
+            <td>{{product[2]}}</td>
+            <td>{{product[3]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="menu">
+        <p><a href="{{ url_for('report_bp.report_menu') }}">Перейти в меню отчетов</a></p>
+    </div>
+</div>
+</body>
+</html>

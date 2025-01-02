@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Ввод параметров</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='input_q.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h2>{{ report_name }}</h2>
+        <form method="post" action="">
+            <label for="reportYear"> Год: </label>
+            <input type="text" id="reportYear" name="reportYear" />
+            <label for="reportMonth"> Номер месяца: </label>
+            <input type="text" id="reportMonth" name="reportMonth" />
+            <input type="submit" value="Отправить"/>
+            <p><a href="{{ url_for('report_bp.report_menu') }}">Назад</a></p>
+        </form>
+    {% for msg in get_flashed_messages() %}
+    <div class="flash">{{msg}}</div>
+    {% endfor %}
+    </div>
+</body>
+</html>

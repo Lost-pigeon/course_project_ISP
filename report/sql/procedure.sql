@@ -1,0 +1,1 @@
+call filippov_lab1.GenerateServiceReport($reportYear, $reportMonth);

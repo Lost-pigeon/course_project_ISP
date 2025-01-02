@@ -1,0 +1,5 @@
+{
+  "manager": {"auth_bp": ["*"], "query_bp": [1], "report_bp": ["*"]},
+  "admin": {"auth_bp": ["*"], "query_bp": [2], "report_bp": [2, 4]},
+  "client": {"order_bp": ["*"]}
+}

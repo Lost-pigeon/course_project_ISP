@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результат из базы банных</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='table.css')}}">
+</head>
+<body>
+<div class="dynamic_table">
+    <h2>{{prod_title}}</h2>
+    <table>
+        <tr class="title">
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Дата изменения баланса</th>
+            <th>Новый баланс</th>
+            <th>Старый баланс</th>
+            <th>Статус баланса</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{product[0]}}</td>
+            <td>{{product[1]}}</td>
+            <td>{{product[2]}}</td>
+            <td>{{product[3]}}</td>
+            <td>{{product[4]}}</td>
+            <td>{{product[5]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="menu">
+        <p><a href="{{ url_for('query_bp.query_menu') }}">Перейти в меню запросов</a></p>
+    </div>
+</div>
+</body>
+</html>

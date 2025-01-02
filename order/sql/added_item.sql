@@ -1,0 +1,1 @@
+SELECT * FROM filippov_lab1.list_of_services WHERE id_service=$id_service;

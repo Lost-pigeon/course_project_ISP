@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню выбора запроса</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Меню выбора запроса</h2>
+        <p class="message">{{ message }}</p>
+        <div class="menu">
+            {% for query in queries %}
+                <a href="{{ url_for('query_bp.query_handler', query_id=query.id) }}">{{ query.name }}</a>
+            {% endfor %}
+            <p><a class="back-link" href="{{ url_for('main_menu') }}">Перейти в главное меню</a></p>
+        </div>
+        {% for msg in get_flashed_messages() %}
+        <div class="flash">{{msg}}</div>
+        {% endfor %}
+    </div>
+</body>
+</html>

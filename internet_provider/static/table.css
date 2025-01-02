@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.dynamic_table {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+td {
+    background-color: #fafafa;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.title {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td:first-child, th:first-child {
+    border-left: 0;
+}
+
+td:last-child, th:last-child {
+    border-right: 0;
+}
+
+.additional-links {
+    text-align: center;
+    margin-top: 1px;
+}
+
+.additional-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.additional-links a:hover {
+    text-decoration: underline;
+}
+
+
+
+.menu {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.menu a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #0056b3;
+}

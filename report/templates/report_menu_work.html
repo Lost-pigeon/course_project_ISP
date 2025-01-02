@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню выбора отчетов</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Меню выбора отчетов</h2>
+        <p class="message">{{ message }}</p>
+        <div class="menu">
+            {% for report in reports %}
+                <a href="{{ url_for('report_bp.report_handler', report_id=report.id) }}">{{ report.name }}</a>
+            {% endfor %}
+            <p><a class="back-link" href="{{ url_for('report_bp.report_menu') }}">Перейти в меню выбора действий с отчетами</a></p>
+        </div>
+        {% for msg in get_flashed_messages() %}
+        <div class="flash">{{msg}}</div>
+        {% endfor %}
+    </div>
+</body>
+</html>

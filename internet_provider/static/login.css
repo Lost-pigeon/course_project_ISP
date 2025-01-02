@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #359;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.additional-links {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.additional-links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.additional-links a:hover {
+    text-decoration: underline;
+}
+
+.flash {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+  border-color: #b3d7ff;
+}
+
+.custom-checkbox:not(:disabled):active+label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+.custom-checkbox:focus+label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.custom-checkbox:focus:not(:checked)+label::before {
+  border-color: #80bdff;
+}
+
+.custom-checkbox:disabled+label::before {
+  background-color: #e9ecef;
+}

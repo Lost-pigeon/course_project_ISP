@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главное меню</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+<div class="container">
+    <h2>Главное меню внутренних пользователей</h2>
+    <p class="message">{{message}}</p>
+    <div class="menu">
+        <a href="{{url_for('query_bp.query_menu')}}">Работа с запросами</a>
+        <a href="{{url_for('report_bp.report_menu')}}">Работа с отчетами</a>
+        <a href="{{url_for('auth_bp.auth_index')}}">Авторизация</a>
+        <a href="{{url_for('exit_func')}}">Выйти</a>
+    </div>
+    {% for msg in get_flashed_messages() %}
+    <div class="flash">{{msg}}</div>
+    {% endfor %}
+</div>
+</body>
+</html>

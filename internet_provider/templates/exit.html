@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выход</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Вы вышли</h2>
+        <h7>Вам необходимо заново авторизоваться</h7>
+        <div class="menu">
+            <p><a href="{{ url_for('main_menu') }}">Перейти в главное меню</a></p>
+        </div>
+    </div>
+</body>
+</html>

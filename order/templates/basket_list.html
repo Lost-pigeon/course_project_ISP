@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подключение услуг</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='basket.css')}}">
+</head>
+<body>
+    {% import 'basket_utils.html' as utils %}
+    <div class="container">
+        <div class="products">
+            <h2>Подключенные услуги</h2>
+            {% if items_con %}
+                {% for item_con in items_con %}
+                    {{ utils.render_item(item_con, action="Отключить") }}
+                {% endfor %}
+            {% else %}
+                <p>Нет доступных услуг</p>
+            {% endif %}
+        </div>
+
+        <div class="products">
+            <h2>Услуги для подключения</h2>
+            {% if items %}
+                {% for item in items %}
+                    {{ utils.render_item(item, action="Подключить") }}
+                {% endfor %}
+            {% else %}
+                <p>Нет доступных услуг</p>
+            {% endif %}
+        </div>
+
+    <div class="basket">
+        <h2>Ваша корзина</h2>
+        {% if basket %}
+            {% for key, item in basket.items() %}
+                <div class="list_basket">
+                    <p>
+                        <span>Название:</span>
+                        <span style="color:blue">{{ item['Name_service'] }}</span>
+                    </p>
+                    <p>
+                        <span>Цена:</span>
+                        <span style="color:blue">{{ item['Price_service'] }}</span>
+                    </p>
+                    <p>
+                        <span>Статус:</span>
+                        <span style="color:{{ 'green' if item['status_service'] == 1 else 'red' }}">
+                            {{ 'Подключение' if item['status_service'] == 1 else 'Отключение' }}
+                        </span>
+                    </p>
+                    <div>
+                        <form action="" method="POST">
+                            <input type="hidden" name="id_service" value="{{ key }}">
+                            <input type="hidden" name="action" value="Удалить">
+                            <button type="submit">Удалить</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Ваша корзина пуста</p>
+        {% endif %}
+        <a href="{{ url_for('order_bp.clear_basket') }}">Очистить корзину</a>
+    </div>
+
+    </div>
+
+    <div class="top-menu">
+        <a href="{{ url_for('order_bp.save_basket') }}">Оформить</a>
+        <a href="{{ url_for('main_menu') }}">Перейти в главное меню</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% macro render_item(item, action=None) %}
+<div class="list_basket">
+    <p>
+        <p><span>Название:</span>
+        <span style="color:blue">{{ item['Name_service'] }}</span>
+        <p><span>Скорость:</span>
+        <span style="color:blue">{{ item['Internet_speed'] }} Гб/с</span>
+        <p><span>Цена:</span>
+        <span style="color:blue">{{ item['Price_service'] }}</span>
+    </p>
+    {% if action %}
+    <div>
+        <form action="" method="POST">
+            <input type="hidden" name="id_service" value="{{ item.get('id_service') or item.key }}">
+            <input type="hidden" name="action" value="{{ action }}">
+            <button type="submit">{{ action }}</button>
+        </form>
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}

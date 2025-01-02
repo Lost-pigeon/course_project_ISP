@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Отчет создан</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Отчет создан</h2>
+        <h7>Чтобы посмотреть отчет вернитесь в меню выбора отчета и перейдите в просмотр</h7>
+        <div class="menu">
+            <p><a href="{{ url_for('report_bp.report_menu') }}">Перейти в меню выбора отчета</a></p>
+        </div>
+    </div>
+</body>
+</html>
